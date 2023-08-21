@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Audiowide">
+    <title> Terra-PIN </title>
+    <link rel="stylesheet" href="home.css" type="text/css"> 
+  </head>
+  <body>
+        <div align="center" class = "full"> 
+        <h1> Terra-PIN </h1>
+        <div align = "center" class = "name">
+            <form id= "gameForm" action = "guessr.html">
+                <label> Name: <input type="text" id="uname" required></label>
+                <br><br>
+                <br><br>
+                <label>
+                    <input type="radio" name="difficulty" value="easy">
+                    Easy
+                </label>
+                <label>
+                    <input type="radio" name="difficulty" value="medium">
+                    Medium
+                </label>
+                <label>
+                    <input type="radio" name="difficulty" value="hard">
+                    Hard
+                </label>
+                <br><br>
+                <br><br>
+                <div>
+                    <input type = "image" src="img/playbutton.png" alt="submit" id="play">
+                </div>
+                <!--<input type = "image" src = "img/playbutton.png" alt = "submit">-->
+                <!--<input type= "submit" value = "Play" class = button> -->
+            </form>
+        </div>
+        <br><br>
+        <!--<div>
+            <img src="img/playbutton.png" alt="playbutton" id="play">
+        </div>-->
+        <div align = "center" class="shellcontainer">
+            <img src="img/45shell.png" alt="45shell" id="leftshell">
+            <img src="img/135shell.png" alt="135shell" id="rightshell">
+        </div> 
+    </div>
+  </div>   
+  <script>
+    clearAllCookies();
+    var form = document.getElementById("gameForm")
+    form.addEventListener("submit", function(event) {
+        // Get the value of the name input field
+        var name = document.getElementById("uname").value;
+
+        // Get the value of the selected difficulty level
+        var difficulty = document.querySelector('input[name="difficulty"]:checked').value;
+
+        // Store the name and difficulty in cookies
+        setCookie(name,difficulty)
+    });
+    function setCookie(name,difficulty) {
+        document.cookie = name + "=" + difficulty
+    }
+    function clearAllCookies() {
+        // Split cookie string and get all individual cookies
+        var cookies = document.cookie.split(";");
+
+        // Loop through the cookies and delete them
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i];
+            var eqPos = cookie.indexOf("=");
+            var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+            document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+        }
+    }
+    
+  </script>
+  </body> 
+</html>

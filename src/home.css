@@ -1,0 +1,76 @@
+html {
+  height: 100%;
+  background: linear-gradient(to top, rgb(204, 183, 183), rgb(240, 150, 150), rgb(229, 22, 22))
+}
+
+
+h1 {
+  width: 250px;
+  height: 47px;
+  display: inline-block;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 75px;
+  margin-top: 50px;
+  font-size: 40px;
+  border-style:  outset;
+  border-color: #bf4540;
+  font-family: "Audiowide"
+}
+
+
+.full {
+  height: 100vh;
+}
+
+label {
+  font-family: "Audiowide"
+}
+.play:hover {
+  color: rgb(66,189,138); 
+}
+
+.button {
+  width: 10rem;
+  height: 15rem;
+}
+
+
+.shellcontainer {
+  position: absolute;
+  bottom: 0;
+} 
+
+#leftshell {
+  position: relative;
+  left: 0;
+  top: 0;
+  /*margin-left: 0;
+  margin-bottom: 0;*/
+  width: 350px;
+}
+
+#rightshell {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  
+  /*margin-right: 0;
+  margin-bottom: 0;*/
+  width: 350px;
+  
+}
+
+#play {
+  width: 150px
+}
+
+#play:hover {
+  opacity:50%
+}
+
+.name {
+  width: 300px;
+}
